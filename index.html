@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud App</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <script type="module" src="./assets/js/petitions.js"></script>
+  <script type="module" src="./assets/js/app.js"></script>
+
+  <body class="container">
+    <header class="header">
+      <h1 class="header__title">CRUD &mdash; TODO App</h1>
+    </header>
+
+    <main class="content">
+      <section class="creation">
+
+        <form 
+          id="form"
+          action="./api/createTask.php"  
+          method="post" 
+          class="form"
+        >
+          <input type="hidden" name="taskID" id="task-id" />
+          <h2 class="creation-title" id="form-title">Crear tarea</h2>
+          <div class="form__field">
+            <label for="input-select" class="form__label">Usuario</label>
+            <select name="userID" class="form__select" id="input-select">
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="input-title" class="form__label">Título</label>
+            <input
+              name="title"
+              id="input-title"
+              type="text"
+              class="form__input"
+              placeholder="Titulo de la tarea"
+            />
+          </div>
+          <div class="form__field">
+            <label for="input-textarea" class="form__label">Descripción</label>
+            <textarea
+              name="description"
+              class="form__textarea"
+              placeholder="Ingrese la descripción de la tarea"
+              name=""
+              id="input-textarea"
+              cols="30"
+              rows="7"
+            >
+            </textarea>
+          </div>
+          <div class="form__button">
+            <button id="form-button" type="submit" class="btn btn--send">Crear tarea</button>
+          </div>
+        </form>
+
+
+      </section>
+
+      <table class="table" id="table">
+        <thead class="table-thead">
+          <tr class="table-tr">
+            <th class="table-th">Id</th>
+            <th class="table-th">Usuario</th>
+            <th class="table-th">Titulo</th>
+            <th class="table-th">Descripción</th>
+            <th class="table-th">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table-tbody" id="table-body"></tbody>
+      </table>
+    </main>
+
+  </body>
+</html>
